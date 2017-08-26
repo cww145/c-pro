@@ -1,7 +1,11 @@
 # c-pro
 for Competitive programming
 
-#### 競プロのコード置き場
+#### 競プロのコード
 
 - AtCoder
 - yukicoder
+
+#### テンプレ
+
+- template
