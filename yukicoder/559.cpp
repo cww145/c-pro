@@ -15,7 +15,7 @@ int main()
         if( S[ i ] == 'A' )
         {
             cnt++;
-		}
+	}
         else
         {
             S.erase( S.begin() + i );
