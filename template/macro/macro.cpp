@@ -9,7 +9,6 @@ using ULL=unsigned long long;
 using PII=pair<int,int>;
 const int INF = numeric_limits<int>::max();
 struct cww{cww(){ios::sync_with_stdio(false);cin.tie(0);}}star;
-vector<vector<int>> memo( 10000 + 1, vector<int>( 10000 + 1, -1 ) );
 int main()
 {
 
