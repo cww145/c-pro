@@ -4,4 +4,4 @@
 
 #Folder
 .vscode/
-**/[a-z]/
+/AtCoder/[a-z]/[0-9]/
