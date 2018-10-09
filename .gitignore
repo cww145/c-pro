@@ -1,4 +1,5 @@
 #File extension
+*.in
 *.out
 *.dSYM
 
