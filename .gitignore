@@ -1,0 +1,7 @@
+#File extension
+*.out
+*.dSYM
+
+#Folder
+.vscode/
+**/[a-z]/
