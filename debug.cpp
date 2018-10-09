@@ -1,1 +1,0 @@
-#include "AtCoder/ABC/112/a.cpp"
