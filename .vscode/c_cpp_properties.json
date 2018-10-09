@@ -4,8 +4,7 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/opt/local/include/gcc6/c++/x86_64-apple-darwin16",
-                "/usr/local/Cellar/gcc/7.2.0/include/c++/7.2.0"
+                "/opt/local/include/gcc6/c++/x86_64-apple-darwin16"
             ],
             "defines": [],
             "macFrameworkPath": [
