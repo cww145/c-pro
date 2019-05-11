@@ -8,10 +8,17 @@ struct cww{cww(){ios::sync_with_stdio(false);cin.tie(0);}}star;
 const long long INF = numeric_limits<long long>::max();
 int main()
 {
-    string A, B, C;
-    cin >> A >> B >> C;
-    cout << max({ stoi( A ) + stoi( B + C ), stoi( A ) + stoi( C + B ),
-                  stoi( B ) + stoi( A + C ), stoi( B ) + stoi( C + A ),
-                  stoi( C ) + stoi( A + B ), stoi( C ) + stoi( B + A ) }) << endl;
+    vector<string> v( 3 );
+    for( auto &x : v )
+    {
+        cin >> x;
+    }
+    int res{};
+    for( int i = 0; i < 6; ++i )
+    {
+        res = max( res, stoi( v[ 0 ] ) + stoi( v[ 1 ] + v[ 2 ] ) );
+        next_permutation( begin( v ), end( v ) );
+    }
+    cout << res << endl;
     return 0;
 }
