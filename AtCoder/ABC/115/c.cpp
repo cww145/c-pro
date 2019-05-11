@@ -24,9 +24,6 @@ int main()
     cout << res << endl;
     return 0;
 }
-
-
-
 int btk(){
     int N,K;
     cin>>N>>K;
