@@ -1,17 +1,45 @@
-DIR1=`dirname $1`
-DIR2=`basename $1 .cpp`
-DIR="$DIR1/$DIR2"
-URL=`head -n 1 $1 | cut -c3-`
-echo $DIR
-echo $URL
-if [ ! -d $DIR ]
-then 
-    mkdir $DIR
-    oj dl $URL -d $DIR
+#!/bin/bash
+
+SH_DIR=$(cd $(dirname $0); pwd)
+
+#パス取得
+SUP=`dirname ${1}`
+#hoge.cpp -> hoge
+SUB=`basename ${1} .cpp`
+#サンプル格納用ディレクトリ
+DIR=${SUP}/${SUB}
+
+#コードからURL取得
+HEAD=`head -n 1 < $1`
+#先頭が//で始まらないならexit
+PR=`echo ${HEAD} | cut -c-2`
+URL=`echo ${HEAD} | cut -c3-`
+if [ "${PR}" != "//" ]; then
+    echo "ERROR: Header is invalid"
+    exit 1
 fi
+
+if [ ! -d ${DIR} ]; then
+    #URLチェック
+    if [ "${URL}" = "" ]; then
+        echo "    ERROR : URL is not found."
+        exit 1
+    fi
+    #${DIR}の確保
+    if [ ! -d ${DIR} ]; then
+        mkdir ${DIR}
+    fi
+    oj dl "${URL}" -d ${DIR}
+fi
+
+#コンパイル
+if [ -f a.out ]; then
+    rm a.out
+fi
+
 g++ -std=c++14 -Wall -Wextra $1
-if [ -f a.out ]
-then
-    oj test -d $DIR
+
+if [ -f a.out ]; then
+    oj test -d ${DIR}
     rm a.out
 fi
