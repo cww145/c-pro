@@ -19,12 +19,9 @@ if [ "${PR}" != "//" ]; then
     exit 1
 fi
 
+#コンパイル
 ${SH_DIR}/build.sh ${1}
-if [ -f a.out ]; then
-    rm a.out
-    echo "submition to ${URL}"
-    oj submit ${URL} ${1}
-    echo "...done"
-fi
 
-
+#実行
+./a.out ${DIR}
+rm a.out

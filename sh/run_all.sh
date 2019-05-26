@@ -19,12 +19,25 @@ if [ "${PR}" != "//" ]; then
     exit 1
 fi
 
-${SH_DIR}/build.sh ${1}
-if [ -f a.out ]; then
-    rm a.out
-    echo "submition to ${URL}"
-    oj submit ${URL} ${1}
-    echo "...done"
+if [ ! -d ${DIR} ]; then
+    #URLチェック
+    if [ "${URL}" = "" ]; then
+        echo "    ERROR : URL is not found."
+        exit 1
+    fi
+    #${DIR}の確保
+    if [ ! -d ${DIR} ]; then
+        mkdir ${DIR}
+    fi
+    oj dl "${URL}" -d ${DIR}
 fi
 
+#コンパイル
+${SH_DIR}/build.sh ${1}
+
+#サンプルの実行
+if [ -f a.out ]; then
+    oj test -d ${DIR}
+    rm a.out
+fi
 
