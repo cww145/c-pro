@@ -7,10 +7,7 @@
                 "/opt/local/include/gcc6/c++/x86_64-apple-darwin18"
             ],
             "defines": [],
-            "macFrameworkPath": [
-                "/System/Library/Frameworks",
-                "/Library/Frameworks"
-            ],
+            "macFrameworkPath": [],
             "compilerPath": "/usr/local/bin/g++"
         }
     ],
