@@ -74,5 +74,10 @@
         "typeindex": "cpp",
         "typeinfo": "cpp"
     },
-    "workbench.colorCustomizations": {}
+    "workbench.colorCustomizations": {},
+    //clang-format
+    "C_Cpp.clang_format_style": "file",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "clang-format.executable": "/usr/local/bin/clang-format"
 }
