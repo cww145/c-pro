@@ -75,7 +75,6 @@
         "typeinfo": "cpp"
     },
     "workbench.colorCustomizations": {},
-    //clang-format
     "C_Cpp.clang_format_style": "file",
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
